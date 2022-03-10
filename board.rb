@@ -73,7 +73,7 @@ class Board
     return true if @turns == 9
 
     @@WINNING_POSITIONS.each do |winning_position|
-      if token_arrays[player_index].length == token_arrays[player_index].union(winning_position).length
+      if (winning_position - token_arrays[player_index]).empty? #don't need to worry if token array is empty because this is only checked after 4 turns already happened.
         @winner = @players[player_index]
         # checks if all the values of winning_position are in token_array
       end
