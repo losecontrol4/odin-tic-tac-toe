@@ -19,7 +19,7 @@ class Player
     input_valid = false
     while(!input_valid) 
       input = gets.chomp
-      if(input.length != 1 || !(input in "1".."9"))
+      if(input.length != 1 || !(input.to_i > 0 && input.to_i < 10 ))
         puts "#{@name}, please enter a valid number, 1 through 9"
         next # jumps to the top of the while loop
       end
